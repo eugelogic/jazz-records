@@ -48,17 +48,18 @@ function JazzRecords() {
       </form>
       <br />
       {isError && <p>Something went wrong :-/</p>}
-      {isLoading ? (
-        <p>Loading now: ...</p>
-      ) : (
-        <ul>
-          {data.results.map(info => (
-            <li key={info.id}>
-              <a href={`https://www.discogs.com${info.uri}`} target="_blank" rel="noopener noreferrer">{info.title}</a>
-            </li>
-          ))}
-        </ul>
-      )}
+      {isLoading
+        ? (<p>Loading now: ...</p>)
+        : (data.results.length === 0)
+        ? (<p>No results for this year. Please try another one.</p>)
+        : (<ul>
+            {data.results.map(info => (
+              <li key={info.id}>
+                <a href={`https://www.discogs.com${info.uri}`} target="_blank" rel="noopener noreferrer">{info.title}</a>
+              </li>
+            ))}
+          </ul>)
+      }
     </div>
   )
 }
