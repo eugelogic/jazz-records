@@ -41,6 +41,7 @@ function JazzRecords() {
       <h2>Search by publishing year</h2>
       <form onSubmit={handleSubmit} >
         <input
+          pattern="[0-9]{4}"
           type="text"
           value={query}
           onChange={handleChange}
