@@ -37,7 +37,8 @@ function JazzRecords() {
 
   return (
     <div>
-      <h1>Search Jazz Records Published by Year</h1>
+      <h1>Most Collected Jazz Records</h1>
+      <h2>Search by publishing year</h2>
       <form onSubmit={handleSubmit} >
         <input
           type="text"
